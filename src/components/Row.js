@@ -4,11 +4,11 @@ import Button from "./Button";
 function Row(props) {
   return (
     <div className="row">
-      {props.buttonDetails.map((button, index) => {
+      {props.buttonDetails.map((button) => {
         const { id, innerText, className } = button;
         return (
           <Button
-            key={index}
+            key={id}
             id={id}
             innerText={innerText}
             className={className}
