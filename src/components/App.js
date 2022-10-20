@@ -60,16 +60,15 @@ class App extends React.Component {
         });
         break;
       case "←":
-        display = display.length > 1 ? display.slice(0, -1) : "0";
         display.charAt(display.length - 1) === "."
           ? (countDecimal = 0)
           : countDecimal;
         this.setState({ countDecimal, display });
+        display = display.length > 1 ? display.slice(0, -1) : "0";
         break;
       case "=":
         result += display;
-        display =
-          eval(result) % 1 !== 0 && (eval(result) + "").length > 4
+        display =  (eval(result) + "").length > 4
             ? eval(result).toFixed(4) + ""
             : eval(result) + "";
 
@@ -119,7 +118,7 @@ class App extends React.Component {
     reminder = result;
     this.setState({
       display: "0",
-      countDecimal: "",
+      countDecimal: 0,
       result,
       isTwoOrMoreOperators: true,
       reminder,
