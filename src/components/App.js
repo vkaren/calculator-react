@@ -63,8 +63,8 @@ class App extends React.Component {
         display.charAt(display.length - 1) === "."
           ? (countDecimal = 0)
           : countDecimal;
-        this.setState({ countDecimal, display });
         display = display.length > 1 ? display.slice(0, -1) : "0";
+        this.setState({ countDecimal, display });
         break;
       case "=":
         result += display;
